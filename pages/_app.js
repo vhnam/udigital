@@ -1,7 +1,19 @@
-import '../styles/globals.css'
+import { translationMessages } from '../i18n';
+import LanguageProvider from '../providers/LanguageProvider';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+import { globalStyles } from '../styles/globals';
 
-export default MyApp
+const UDigital = ({ Component, pageProps, router }) => {
+  const { locale, defaultLocale } = router;
+
+  return (
+    <LanguageProvider locale={locale || defaultLocale} messages={translationMessages}>
+      <>
+        {globalStyles}
+        <Component {...pageProps} />
+      </>
+    </LanguageProvider>
+  );
+};
+
+export default UDigital;
