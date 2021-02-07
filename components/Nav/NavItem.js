@@ -14,6 +14,11 @@ const NavItem = styled.li`
   &:active {
     opacity: 0.8;
   }
+
+  @media (min-width: 768px) {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
 `;
 
 export default NavItem;

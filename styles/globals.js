@@ -27,6 +27,22 @@ export const globalStyles = (
         src: local(''), url('/fonts/Be_Vietnam/BeVietnam-Bold.ttf') format('truetype');
       }
 
+      @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local(''), url('/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+      }
+
+      @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: local(''), url('/fonts/Montserrat/Montserrat-Medium.ttf') format('truetype');
+      }
+
       * {
         box-sizing: border-box;
       }

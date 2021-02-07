@@ -6,7 +6,8 @@ const NavbarNav = styled.ul`
   left: 0;
   right: 0;
   display: ${(props) => (props.expand ? 'block' : 'none')};
-  padding: 0;
+  padding-left: 0;
+  padding-bottom: 1rem;
   margin: 0;
   list-style-type: none;
   background-color: #fff;
@@ -15,6 +16,7 @@ const NavbarNav = styled.ul`
     position: static;
     display: inline-flex;
     align-items: center;
+    background-color: transparent;
   }
 `;
 

@@ -1,13 +1,15 @@
 import styled from '@emotion/styled';
 
 const Button = styled.button`
+  display: inline-block;
+  width: 100%;
   padding: 1rem;
   background-color: #32b260;
-  font-size: 1.25rem;
+  font-family: 'Montserrat', sans-serif;
   color: #fff;
-  font-weight: 700;
-  text-transform: uppercase;
-  box-shadow: 0 10px 22px #06a10b;
+  font-weight: 500;
+  box-shadow: 0 10px 22px rgb(172 246 199 / 90%);
+  border: none;
 
   &:hover {
     background-color: #46b96f;

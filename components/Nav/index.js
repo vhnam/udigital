@@ -28,7 +28,7 @@ const Nav = () => {
   const toggleNav = useToggle();
 
   return (
-    <Navbar>
+    <Navbar expand={toggleNav.active}>
       <Logo />
       <NavToggleWrapper>
         <NavToggle onClick={toggleNav.toggle} />
