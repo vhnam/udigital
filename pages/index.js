@@ -1,7 +1,7 @@
 import Nav from '../components/Nav';
 
 import Banner from '../fragments/homepage/Banner';
-import Hero from '../fragments/homepage/Banner/Hero';
+import Hero from '../fragments/homepage/Hero';
 
 const Home = () => (
   <>

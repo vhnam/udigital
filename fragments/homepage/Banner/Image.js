@@ -5,7 +5,7 @@ const Wrapper = styled.div`
 
   @media (min-width: 768px) {
     flex: 0 0 auto;
-    width: 55%;
+    width: 45%;
     padding-top: 5rem;
   }
 `;

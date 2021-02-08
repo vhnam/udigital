@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   @media (min-width: 768px) {
     flex: 0 0 auto;
     padding-left: 2.25rem;
-    width: 45%;
+    width: 55%;
     text-align: left;
   }
 `;
