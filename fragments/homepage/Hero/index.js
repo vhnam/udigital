@@ -14,12 +14,20 @@ const Hero = styled.div`
     width: 100%;
     height: 120%;
     background: linear-gradient(180deg, #ffe9e2, #d2fffc);
-    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 90%);
+    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 50%);
   }
 
   @media (min-width: 768px) {
     &:after {
       background: linear-gradient(90deg, #d2fffc, #ffe9e2);
+      clip-path: polygon(0 0, 100% 0, 100% 40%, 0 70%)
+    }
+  }
+
+  @media (min-width: 992px) {
+    &:after {
+      background: linear-gradient(90deg, #d2fffc, #ffe9e2);
+      clip-path: polygon(0 0, 100% 0, 100% 30%, 0 80%)
     }
   }
 `;

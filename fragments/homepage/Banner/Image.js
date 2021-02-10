@@ -5,13 +5,13 @@ const Wrapper = styled.div`
 
   @media (min-width: 768px) {
     flex: 0 0 auto;
-    width: 45%;
+    width: 55%;
     padding-top: 5rem;
   }
 `;
 
 const Img = styled.img`
-  width: 80%;
+  width: 90%;
 `;
 
 const Image = () => (

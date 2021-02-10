@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   @media (min-width: 768px) {
     flex: 0 0 auto;
     padding-left: 2.25rem;
-    width: 55%;
+    width: 45%;
     text-align: left;
   }
 `;
@@ -27,7 +27,6 @@ const Description = styled.p`
 
   @media (min-width: 768px) {
     margin: 0 0 3rem;
-    width: 100%;
   }
 `;
 
