@@ -1,5 +1,6 @@
 import Nav from '../components/Nav';
 
+import AboutUs from '../fragments/homepage/AboutUs';
 import Banner from '../fragments/homepage/Banner';
 import Clients from '../fragments/homepage/Clients';
 import Hero from '../fragments/homepage/Hero';
@@ -13,6 +14,7 @@ const Home = () => (
       <Clients />
     </Hero>
     <Services />
+    <AboutUs />
   </>
 );
 
