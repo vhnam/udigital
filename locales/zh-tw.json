@@ -2,5 +2,8 @@
   "Nav.Services": "服務",
   "Nav.Work": "工作",
   "Nav.AboutUs": "關於我們",
-  "Nav.GetStarted": "開始使用"
+  "Nav.GetStarted": "開始使用",
+  "Banner.Heading": "<br>讓我們將您的品牌</br><br>提升到一個新的水平</br>",
+  "Banner.Description": "您的首選數字代理商，可以在數字空間中建立自己的品牌，從而在數字上有意義。",
+  "Banner.Button": "看我們的工作"
 }
