@@ -20,7 +20,6 @@ const Wrapper = styled.div`
 const Description = styled.p`
   margin: 0 auto 3rem;
   width: 80%;
-  font-family: Montserrat, sans-serif;
   font-size: 1rem;
   color: #5b5b5b;
   line-height: 1.5rem;
