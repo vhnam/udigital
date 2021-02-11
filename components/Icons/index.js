@@ -5,3 +5,5 @@ export { default as CreativeDesign } from './CreativeDesign';
 export { default as Branding } from './Branding';
 export { default as MediaBuying } from './MediaBuying';
 export { default as WebApp } from './WebApp';
+export { default as View } from './View';
+export { default as Close } from './Close';
