@@ -11,6 +11,8 @@
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "emotion-rgba": "0.0.8",
+    "framer-motion": "^3.3.0",
+    "jotai": "^0.14.0",
     "lodash": "^4.17.20",
     "next": "10.0.6",
     "react": "^17.0.1",

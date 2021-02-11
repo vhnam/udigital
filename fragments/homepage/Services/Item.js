@@ -8,7 +8,7 @@ const Li = styled.li`
   margin-bottom: 1.5rem;
   text-align: left;
 
-  @media (min-width:992px) {
+  @media (min-width: 992px) {
     flex: 0 0 auto;
     width: 50%;
   }
@@ -22,7 +22,6 @@ const Container = styled.div`
   transition: box-shadow 500ms ease-in;
 
   &:hover {
-    cursor: pointer;
     box-shadow: 0 10px 40px rgb(0 0 0 / 20%);
   }
 
@@ -32,7 +31,7 @@ const Container = styled.div`
     margin-left: 2rem;
   }
 
-  @media (min-width:992px) {
+  @media (min-width: 992px) {
     margin-left: 4rem;
     height: 100%;
   }
