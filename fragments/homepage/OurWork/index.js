@@ -6,6 +6,7 @@ import OurWorkContext from '../../../contexts/OurWorkContext';
 
 import { showModalAtom } from '../../../store/modal';
 
+import Button from '../../../components/Button';
 import { H2 } from '../../../components/Typography';
 
 import Item from './Item';
@@ -42,6 +43,11 @@ const Description = styled.p`
     width: inherit;
   }
 `;
+
+const ButtonWrapper = styled.div`
+  margin: 0 auto 5rem auto;
+  max-width: 20rem;
+`
 
 const data = [
   {
@@ -111,6 +117,11 @@ const OurWork = () => {
             <Item key={item.id} id={item.id} category={item.category} project={item.project} image={item.image} />
           ))}
         </List>
+        <ButtonWrapper>
+        <Button>
+          <FormattedMessage id="OurWork.SeeMoreWork" />
+        </Button>
+        </ButtonWrapper>
       </Wrapper>
     </OurWorkContext.Provider>
   );
