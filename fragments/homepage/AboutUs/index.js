@@ -26,7 +26,7 @@ const Wrapper = styled.div`
 `;
 
 const AboutUs = () => (
-  <Container>
+  <Container id="about">
     <Wrapper>
       <Content />
       <Image />
