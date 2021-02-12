@@ -4,6 +4,10 @@ import { useAtom } from 'jotai';
 
 import OurWorkContext from '@/contexts/OurWorkContext';
 
+import { fetchImage } from '@/helpers/requests';
+
+import { useWorks } from '@/hooks/useWorks';
+
 import { showModalAtom } from '@/store/modal';
 
 import Button from '@/components/Button';
@@ -49,46 +53,9 @@ const ButtonWrapper = styled.div`
   max-width: 20rem;
 `;
 
-const data = [
-  {
-    id: 1,
-    category: 'Dinosaur',
-    project: 'Telmatosaurus',
-    image: '/img/project-01.jpg',
-  },
-  {
-    id: 2,
-    category: 'Metal',
-    project: 'Platinum',
-    image: '/img/project-02.jpg',
-  },
-  {
-    id: 3,
-    category: 'Dogs',
-    project: 'Boxer',
-    image: '/img/project-03.jpg',
-  },
-  {
-    id: 4,
-    category: 'Snakes',
-    project: 'Brown Snake',
-    image: '/img/project-04.jpg',
-  },
-  {
-    id: 5,
-    category: 'Flowers Actors',
-    project: 'Geranium',
-    image: '/img/project-05.jpg',
-  },
-  {
-    id: 6,
-    category: 'Actors',
-    project: 'Ben Kingsley',
-    image: '/img/project-06.jpg',
-  },
-];
-
 const OurWork = () => {
+  const { data } = useWorks();
+
   const [, showModal] = useAtom(showModalAtom);
 
   const handleSelectedProject = (projectID) => {
@@ -114,7 +81,13 @@ const OurWork = () => {
         </Description>
         <List>
           {data.map((item) => (
-            <Item key={item.id} id={item.id} category={item.category} project={item.project} image={item.image} />
+            <Item
+              key={item.id}
+              id={item.id}
+              category={item.Category.category_en}
+              project={item.Project.project_en}
+              image={fetchImage(item.Image.url)}
+            />
           ))}
         </List>
         <ButtonWrapper>
