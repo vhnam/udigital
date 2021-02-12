@@ -3,7 +3,8 @@ import { FormattedMessage } from 'react-intl';
 
 import useToggle from '../../hooks/useToggle';
 
-import Logo from './Logo';
+import Logo from '../Logo';
+
 import Navbar from './Navbar';
 import NavbarNav from './NavbarNav';
 import NavGetStarted from './NavGetStarted';

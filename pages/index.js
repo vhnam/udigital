@@ -1,3 +1,4 @@
+import Footer from '../components/Footer';
 import Nav from '../components/Nav';
 
 import AboutUs from '../fragments/homepage/AboutUs';
@@ -21,6 +22,7 @@ const Home = () => (
     <OurWork />
     <Testimonial />
     <WorkWithUs />
+    <Footer />
   </>
 );
 
