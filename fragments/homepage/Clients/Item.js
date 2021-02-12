@@ -5,7 +5,7 @@ const Li = styled.li`
   width: 50%;
   padding: 0.5rem;
 
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     width: 33.333333333%;
   }
 

@@ -1,5 +1,11 @@
 import styled from '@emotion/styled';
 
+import { fetchImage } from '@/helpers/requests';
+
+import { useClients } from '@/hooks/useClients';
+
+import Loading from '@/components/Loading';
+
 import Item from '@/fragments/homepage/Clients/Item';
 import List from '@/fragments/homepage/Clients/List';
 
@@ -21,41 +27,19 @@ const Wrapper = styled.div`
   }
 `;
 
-const data = [
-  {
-    brand: 'Crafftic Arts',
-    img: '/img/crafftic-arts.png',
-  },
-  {
-    brand: '24TKT',
-    img: '/img/24tkt.png',
-  },
-  {
-    brand: 'BSA',
-    img: '/img/bsa.png',
-  },
-  {
-    brand: 'DDF',
-    img: '/img/ddf.png',
-  },
-  {
-    brand: 'Disarga',
-    img: '/img/disarga.png',
-  },
-  {
-    brand: 'Beyond Beauty',
-    img: '/img/beyond-beauty.png',
-  },
-];
+const Clients = () => {
+  const { data, isFetching } = useClients();
 
-const Clients = () => (
-  <Wrapper>
-    <List>
-      {data.map((item) => (
-        <Item key={item.brand} brand={item.brand} img={item.img} />
-      ))}
-    </List>
-  </Wrapper>
-);
+  return (
+    <Wrapper>
+      {isFetching && <Loading />}
+      <List>
+        {data.map((item) => (
+          <Item key={item.id} brand={item.name} img={fetchImage(item.Logo[0].url)} />
+        ))}
+      </List>
+    </Wrapper>
+  );
+};
 
 export default Clients;

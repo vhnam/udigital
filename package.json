@@ -10,6 +10,7 @@
   "dependencies": {
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
+    "axios": "^0.21.1",
     "emotion-rgba": "0.0.8",
     "framer-motion": "^3.3.0",
     "jotai": "^0.14.0",
