@@ -13,5 +13,10 @@
   "OurWork.Heading": "Our Work",
   "OurWork.Description": "We believe in Show up not Show off. And our work speaks for our believe.",
   "OurWork.SeePhoto": "<text>See Photo</text>",
-  "OurWork.SeeMoreWork": "See More Work"
+  "OurWork.SeeMoreWork": "See More Work",
+  "WorkWithUs.Heading": "Work With Us",
+  "WorkWithUs.Name": "Name",
+  "WorkWithUs.Email": "Email",
+  "WorkWithUs.Phone": "Phone",
+  "WorkWithUs.Submit": "Get Started"
 }

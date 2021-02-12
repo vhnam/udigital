@@ -7,6 +7,7 @@ import Hero from '../fragments/homepage/Hero';
 import OurWork from '../fragments/homepage/OurWork';
 import Services from '../fragments/homepage/Services';
 import Testimonial from '../fragments/homepage/Testimonial';
+import WorkWithUs from '../fragments/homepage/WorkWithUs';
 
 const Home = () => (
   <>
@@ -19,6 +20,7 @@ const Home = () => (
     <AboutUs />
     <OurWork />
     <Testimonial />
+    <WorkWithUs />
   </>
 );
 
