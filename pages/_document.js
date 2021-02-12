@@ -4,9 +4,7 @@ class RootDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <title>UDigital</title>
-        </Head>
+        <Head />
         <body>
           <Main />
 
