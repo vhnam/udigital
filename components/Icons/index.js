@@ -7,3 +7,4 @@ export { default as MediaBuying } from './MediaBuying';
 export { default as WebApp } from './WebApp';
 export { default as View } from './View';
 export { default as Close } from './Close';
+export { default as Quote } from './Quote';
