@@ -7,6 +7,10 @@ const apis = {
     url: '/clients',
     method: 'GET',
   },
+  getServices: {
+    url: '/services',
+    method: 'GET',
+  },
 };
 
 const config = {

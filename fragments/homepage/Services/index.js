@@ -1,5 +1,8 @@
+import { useMemo } from 'react';
 import styled from '@emotion/styled';
 import { FormattedMessage } from 'react-intl';
+
+import { useServices } from '@/hooks/useServices';
 
 import { H2 } from '@/components/Typography';
 import { Branding, CreativeDesign, DigitalMarketing, MediaBuying, Target, WebApp } from '@/components/Icons';
@@ -37,71 +40,76 @@ const Description = styled.p`
   }
 `;
 
-const data = [
+const services = [
   {
-    heading: 'Digital Marketing 360',
-    description:
-      'After creating a successful corporate brand, the next important step is to maintain it. That is why we provide Public Relations. Public Relations (PR) helps communicate credibly with audiences, as well as to maintain the brand’s tone, personality and reputation.',
+    key: 'digital_marketing',
     color: '#F3C203',
     icon: <DigitalMarketing />,
   },
   {
-    heading: 'Digital Strategy & planning',
-    description:
-      'We provides 360 degree digital services in web design, marketing, ad operations, inventory consultants and content management. We ensure experts in each of our respective domains work closely on each project.',
+    key: 'digital_strategy',
     color: '#00D362',
     icon: <Target />,
   },
   {
-    heading: 'Creative Design Sollution',
-    description:
-      'Our creative content helps you to grow your business & ensure that your brands achieve great results in digital media spaces.',
+    key: 'creative_design_solution',
     color: '#886CFF',
     icon: <CreativeDesign />,
   },
   {
-    heading: 'Branding and Identity',
-    description:
-      'Your logo and brand will often form the first impression a prospective client gets of your company. We create brands that build business.',
+    key: 'branding_identity',
     color: '#F55498',
     icon: <Branding />,
   },
   {
-    heading: 'Media Buying',
-    description:
-      'We deliver your content to all standard platforms including social media, Google ads as well as local channels such as TV,radio and newspapers. Check our list of partners for a full list of media outlets where you can display ads.',
+    key: 'media_buying',
     color: '#FF3F00',
     icon: <MediaBuying />,
   },
   {
-    heading: 'Web and App Development',
-    description:
-      'In the age of digitalization, we have equipped ourselves into utilizing the most effective workflows, tools and technologies to deliver at the highest level. Innovating products and solutions within your time and budget is our priority.',
+    key: 'web_app_development',
     color: '#0081F5',
     icon: <WebApp />,
   },
 ];
 
-const Services = () => (
-  <Wrapper id="services">
-    <Heading>
-      <FormattedMessage id="Services.Heading" />
-    </Heading>
-    <Description>
-      <FormattedMessage id="Services.Description" />
-    </Description>
-    <List>
-      {data.map((item) => (
-        <Item
-          key={item.heading}
-          heading={item.heading}
-          description={item.description}
-          color={item.color}
-          icon={item.icon}
-        />
-      ))}
-    </List>
-  </Wrapper>
-);
+const Services = () => {
+  const { data } = useServices();
+
+  const formattedData = useMemo(
+    () =>
+      data.reduce(
+        (obj, item) => ({
+          ...obj,
+          [item.key]: item,
+        }),
+        {}
+      ),
+    [data]
+  );
+
+  return (
+    <Wrapper id="services">
+      <Heading>
+        <FormattedMessage id="Services.Heading" />
+      </Heading>
+      <Description>
+        <FormattedMessage id="Services.Description" />
+      </Description>
+
+      <List>
+        {services.map((item) => (
+          <Item
+            key={item.key}
+            heading={formattedData[item.key].Heading.heading_en}
+            description={formattedData[item.key].Description.description_en}
+            color={item.color}
+            icon={item.icon}
+          />
+        ))}
+      </List>
+    </Wrapper>
+  );
+};
 
 export default Services;
