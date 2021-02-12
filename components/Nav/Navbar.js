@@ -5,12 +5,7 @@ const Navbar = styled.nav`
   top: 0;
   left: 0;
   right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 1rem;
-  margin: 0 auto;
-  max-width: 71.25rem;
   background-color: ${(props) => (props.expand ? '#fff' : 'transparent')};
   transition: background-color 100ms ease-out;
   z-index: 10000;

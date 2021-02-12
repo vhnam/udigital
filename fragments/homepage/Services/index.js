@@ -83,7 +83,7 @@ const data = [
 ];
 
 const Services = () => (
-  <Wrapper>
+  <Wrapper id="services">
     <Heading>
       <FormattedMessage id="Services.Heading" />
     </Heading>

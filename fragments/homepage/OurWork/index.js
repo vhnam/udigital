@@ -105,7 +105,7 @@ const OurWork = () => {
         onSelectProject: handleSelectedProject,
       }}
     >
-      <Wrapper>
+      <Wrapper id="work">
         <Heading>
           <FormattedMessage id="OurWork.Heading" />
         </Heading>
