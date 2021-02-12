@@ -3,6 +3,7 @@ import { dehydrate } from 'react-query/hydration';
 
 import { fetchClients } from '@/hooks/useClients';
 import { fetchServices } from '@/hooks/useServices';
+import { fetchAbout } from '@/hooks/useAbout';
 
 import Footer from '@/components/Footer';
 import Nav from '@/components/Nav';
@@ -39,6 +40,7 @@ export const getStaticProps = async () => {
 
   await queryClient.prefetchQuery(['clients'], fetchClients);
   await queryClient.prefetchQuery(['services'], fetchServices);
+  await queryClient.prefetchQuery(['about'], fetchAbout);
 
   return {
     props: {

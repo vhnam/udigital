@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import { useAbout } from '@/hooks/useAbout';
+
 import Content from '@/fragments/homepage/AboutUs/Content';
 import Image from '@/fragments/homepage/AboutUs/Image';
 
@@ -25,13 +27,17 @@ const Wrapper = styled.div`
   }
 `;
 
-const AboutUs = () => (
-  <Container id="about">
-    <Wrapper>
-      <Content />
-      <Image />
-    </Wrapper>
-  </Container>
-);
+const AboutUs = () => {
+  const { data } = useAbout();
+
+  return (
+    <Container id="about">
+      <Wrapper>
+        <Content content={data.biography_en} />
+        <Image />
+      </Wrapper>
+    </Container>
+  );
+};
 
 export default AboutUs;
