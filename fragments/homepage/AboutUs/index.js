@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
-import Content from './Content';
-import Image from './Image';
+import Content from '@/fragments/homepage/AboutUs/Content';
+import Image from '@/fragments/homepage/AboutUs/Image';
 
 const Container = styled.div`
   background-color: #f8fbff;

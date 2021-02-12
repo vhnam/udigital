@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { FormattedMessage } from 'react-intl';
 
-import Button from '../../../components/Button';
-import { H2 } from '../../../components/Typography';
+import Button from '@/components/Button';
+import { H2 } from '@/components/Typography';
 
 const Wrapper = styled.div`
   margin-top: 2rem;

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import {Menu} from '../Icons';
+import {Menu} from '@/components/Icons';
 
 const Wrapper = styled.button`
   color: #000;

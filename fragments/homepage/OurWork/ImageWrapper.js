@@ -2,12 +2,12 @@ import styled from '@emotion/styled';
 import { useContext } from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import OurWorkContext from '../../../contexts/OurWorkContext';
+import OurWorkContext from '@/contexts/OurWorkContext';
 
-import useToggle from '../../../hooks/useToggle';
+import useToggle from '@/hooks/useToggle';
 
-import Button from '../../../components/Button';
-import { View } from '../../../components/Icons';
+import Button from '@/components/Button';
+import { View } from '@/components/Icons';
 
 const Wrapper = styled.div`
   position: relative;

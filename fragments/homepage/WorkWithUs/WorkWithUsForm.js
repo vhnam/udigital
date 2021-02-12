@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 import { useForm } from 'react-hook-form';
 import { FormattedMessage } from 'react-intl';
 
-import Button from '../../../components/Button';
-import { Account, Email, Phone } from '../../../components/Icons';
-import TextField from '../../../components/TextField';
+import Button from '@/components/Button';
+import { Account, Email, Phone } from '@/components/Icons';
+import TextField from '@/components/TextField';
 
 const Form = styled.form`
   margin: 0 auto;

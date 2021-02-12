@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 
-import Slider from '../../../components/Slider';
+import Slider from '@/components/Slider';
 
-import Illustrator from './Illustrator';
-import ReviewItem from './ReviewItem';
+import Illustrator from '@/fragments/homepage/Testimonial/Illustrator';
+import ReviewItem from '@/fragments/homepage/Testimonial/ReviewItem';
 
 const Container = styled.div`
   background-color: #f9fffa;

@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
-import { H6 } from '../../../components/Typography';
+import { H6 } from '@/components/Typography';
 
-import Avatar from './Avatar';
+import Avatar from '@/fragments/homepage/Testimonial/Avatar';
 
 const Wrapper = styled.div`
   position: relative;

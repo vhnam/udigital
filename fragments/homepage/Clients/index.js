@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
-import Item from './Item';
-import List from './List';
+import Item from '@/fragments/homepage/Clients/Item';
+import List from '@/fragments/homepage/Clients/List';
 
 const Wrapper = styled.div`
   padding: 1rem;

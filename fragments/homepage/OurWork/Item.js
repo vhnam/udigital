@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
-import { H5 } from '../../../components/Typography';
+import { H5 } from '@/components/Typography';
 
-import ImageWrapper from './ImageWrapper';
+import ImageWrapper from '@/fragments/homepage/OurWork/ImageWrapper';
 
 const Li = styled.li`
   margin-bottom: 1.5rem;

@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 import { FormattedMessage } from 'react-intl';
 
-import { H2 } from '../../../components/Typography';
-import { Branding, CreativeDesign, DigitalMarketing, MediaBuying, Target, WebApp } from '../../../components/Icons';
+import { H2 } from '@/components/Typography';
+import { Branding, CreativeDesign, DigitalMarketing, MediaBuying, Target, WebApp } from '@/components/Icons';
 
-import List from './List';
-import Item from './Item';
+import List from '@/fragments/homepage/Services/List';
+import Item from '@/fragments/homepage/Services/Item';
 
 const Wrapper = styled.div`
   padding: 1rem;

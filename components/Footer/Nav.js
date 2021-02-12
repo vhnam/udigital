@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { FormattedMessage } from 'react-intl';
 import Link from 'next/link';
 
-import { H6 } from '../Typography';
+import { H6 } from '@/components/Typography';
 
 const Wrapper = styled.div`
   text-align: center;

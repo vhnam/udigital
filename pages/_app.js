@@ -1,24 +1,30 @@
 import { Provider } from 'jotai';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { Hydrate } from 'react-query/hydration';
 
-import { translationMessages } from '../i18n';
+import { translationMessages } from '@/config/i18n';
 
-import LanguageProvider from '../providers/LanguageProvider';
-import ModalProvider from '../providers/ModalProvider';
+import LanguageProvider from '@/providers/LanguageProvider';
+import ModalProvider from '@/providers/ModalProvider';
 
-import { globalStyles } from '../styles/globals';
+import { globalStyles } from '@/styles/globals';
+
+const queryClient = new QueryClient();
 
 const UDigital = ({ Component, pageProps, router }) => {
   const { locale, defaultLocale } = router;
 
   return (
     <Provider>
-      <LanguageProvider locale={locale || defaultLocale} messages={translationMessages}>
-        <>
-          {globalStyles}
-          <Component {...pageProps} />
-          <ModalProvider />
-        </>
-      </LanguageProvider>
+      <QueryClientProvider client={queryClient}>
+        <LanguageProvider locale={locale || defaultLocale} messages={translationMessages}>
+          <Hydrate state={pageProps.dehydratedState}>
+            {globalStyles}
+            <Component {...pageProps} />
+            <ModalProvider />
+          </Hydrate>
+        </LanguageProvider>
+      </QueryClientProvider>
     </Provider>
   );
 };

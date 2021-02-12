@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
-import Content from './Content';
-import Image from './Image';
+import Content from '@/fragments/homepage/Banner/Content';
+import Image from '@/fragments/homepage/Banner/Image';
 
 const Wrapper = styled.div`
   margin: 0 auto;

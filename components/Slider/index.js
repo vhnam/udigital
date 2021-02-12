@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
-import Box from './Box';
-import Wrapper from './Wrapper';
-import Content from './Content';
-import Flex from './Flex';
-import Bullet from './Bullet';
+import Box from '@/components/Slider/Box';
+import Wrapper from '@/components/Slider/Wrapper';
+import Content from '@/components/Slider/Content';
+import Flex from '@/components/Slider/Flex';
+import Bullet from '@/components/Slider/Bullet';
 
 const directionOffset = 800;
 const swipeConfidenceThreshold = 100;

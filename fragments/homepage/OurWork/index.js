@@ -2,16 +2,16 @@ import styled from '@emotion/styled';
 import { FormattedMessage } from 'react-intl';
 import { useAtom } from 'jotai';
 
-import OurWorkContext from '../../../contexts/OurWorkContext';
+import OurWorkContext from '@/contexts/OurWorkContext';
 
-import { showModalAtom } from '../../../store/modal';
+import { showModalAtom } from '@/store/modal';
 
-import Button from '../../../components/Button';
-import { H2 } from '../../../components/Typography';
+import Button from '@/components/Button';
+import { H2 } from '@/components/Typography';
 
-import Item from './Item';
-import List from './List';
-import ProjectModal from './ProjectModal';
+import Item from '@/fragments/homepage/OurWork/Item';
+import List from '@/fragments/homepage/OurWork/List';
+import ProjectModal from '@/fragments/homepage/OurWork/ProjectModal';
 
 const Wrapper = styled.div`
   padding: 1rem;
@@ -47,7 +47,7 @@ const Description = styled.p`
 const ButtonWrapper = styled.div`
   margin: 0 auto 5rem auto;
   max-width: 20rem;
-`
+`;
 
 const data = [
   {
@@ -118,9 +118,9 @@ const OurWork = () => {
           ))}
         </List>
         <ButtonWrapper>
-        <Button>
-          <FormattedMessage id="OurWork.SeeMoreWork" />
-        </Button>
+          <Button>
+            <FormattedMessage id="OurWork.SeeMoreWork" />
+          </Button>
         </ButtonWrapper>
       </Wrapper>
     </OurWorkContext.Provider>

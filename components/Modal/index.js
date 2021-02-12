@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
-import { disableScroll, enableScroll } from '../../helpers/behaviors';
+import { disableScroll, enableScroll } from '@/helpers/behaviors';
 
-import BtnClose from './BtnClose';
-import Container from './Container';
-import Content from './Content';
-import Header from './Header';
-import Overlay from './Overlay';
-import Title from './Title';
+import BtnClose from '@/components/Modal/BtnClose';
+import Container from '@/components/Modal/Container';
+import Content from '@/components/Modal/Content';
+import Header from '@/components/Modal/Header';
+import Overlay from '@/components/Modal/Overlay';
+import Title from '@/components/Modal/Title';
 
 const containerVariants = {
   initial: { top: 'calc(50% - 50px)', transition: { type: 'spring', duration: '0.3' } },

@@ -2,15 +2,15 @@ import { useCallback, useEffect, useRef } from 'react';
 import styled from '@emotion/styled';
 import { FormattedMessage } from 'react-intl';
 
-import useToggle from '../../hooks/useToggle';
+import useToggle from '@/hooks/useToggle';
 
-import Logo from '../Logo';
+import Logo from '@/components/Logo';
 
-import Navbar from './Navbar';
-import NavbarNav from './NavbarNav';
-import NavGetStarted from './NavGetStarted';
-import NavItem from './NavItem';
-import NavToggle from './NavToggle';
+import Navbar from '@/components/Nav/Navbar';
+import NavbarNav from '@/components/Nav/NavbarNav';
+import NavGetStarted from '@/components/Nav/NavGetStarted';
+import NavItem from '@/components/Nav/NavItem';
+import NavToggle from '@/components/Nav/NavToggle';
 
 const Container = styled.div`
   display: flex;

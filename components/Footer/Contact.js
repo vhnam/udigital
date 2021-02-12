@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
-import { Behance, Dribbble, Facebook, LinkedIn, Twitter, Instagram } from '../Icons';
-import { H5 } from '../Typography';
+import { Behance, Dribbble, Facebook, LinkedIn, Twitter, Instagram } from '@/components/Icons';
+import { H5 } from '@/components/Typography';
 
 const Wrapper = styled.div`
   margin-top: 3rem;
