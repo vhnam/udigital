@@ -23,6 +23,10 @@ const apis = {
     url: '/reviews',
     method: 'GET',
   },
+  createFeedback: {
+    url: '/feedback',
+    method: 'POST',
+  },
 };
 
 const config = {

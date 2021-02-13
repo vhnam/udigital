@@ -6,7 +6,7 @@ import OurWorkContext from '@/contexts/OurWorkContext';
 
 import { fetchImage } from '@/helpers/requests';
 
-import { useWorks } from '@/hooks/useWorks';
+import { useWorks } from '@/queries/hooks/works';
 
 import { showModalAtom } from '@/store/modal';
 

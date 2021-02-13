@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 import { fetchImage } from '@/helpers/requests';
 
-import { useClients } from '@/hooks/useClients';
+import { useClients } from '@/queries/hooks/clients';
 
 import Item from '@/fragments/homepage/Clients/Item';
 import List from '@/fragments/homepage/Clients/List';

@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import styled from '@emotion/styled';
 import { FormattedMessage } from 'react-intl';
 
-import { useServices } from '@/hooks/useServices';
+import { useServices } from '@/queries/hooks/services';
 
 import { H2 } from '@/components/Typography';
 import { Branding, CreativeDesign, DigitalMarketing, MediaBuying, Target, WebApp } from '@/components/Icons';

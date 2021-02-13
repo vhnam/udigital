@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { useReviews } from '@/hooks/useReviews';
+import { useReviews } from '@/queries/hooks/reviews';
 
 import Loading from '@/components/Loading';
 import Slider from '@/components/Slider';

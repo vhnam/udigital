@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { useAbout } from '@/hooks/useAbout';
+import { useAbout } from '@/queries/hooks/about';
 
 import Content from '@/fragments/homepage/AboutUs/Content';
 import Image from '@/fragments/homepage/AboutUs/Image';
