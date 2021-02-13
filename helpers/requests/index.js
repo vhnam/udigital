@@ -9,4 +9,14 @@ export const makeRequest = (url, method, data) =>
     data,
   });
 
-export const fetchImage = (path) => `${config.app.apiURL}${path}`
+export const fetchImage = (path) => `${config.app.apiURL}${path}`;
+
+export const getErrorMessage = (error) => {
+  if (error.data?.error?.message) {
+    return error.data.error;
+  }
+
+  return {
+    message: 'Something went wrong!',
+  };
+};

@@ -1,11 +1,11 @@
 import { QueryClient } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 
-import { fetchClients } from '@/hooks/useClients';
-import { fetchServices } from '@/hooks/useServices';
-import { fetchAbout } from '@/hooks/useAbout';
-import { fetchWorks } from '@/hooks/useWorks';
-import { fetchReviews } from '@/hooks/useReviews';
+import { fetchClients } from '@/queries/apis/clients';
+import { fetchServices } from '@/queries/apis/services';
+import { fetchAbout } from '@/queries/apis/about';
+import { fetchWorks } from '@/queries/apis/works';
+import { fetchReviews } from '@/queries/apis/reviews';
 
 import Footer from '@/components/Footer';
 import Nav from '@/components/Nav';

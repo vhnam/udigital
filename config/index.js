@@ -24,7 +24,7 @@ const apis = {
     method: 'GET',
   },
   createFeedback: {
-    url: '/feedback',
+    url: '/feedbacks',
     method: 'POST',
   },
 };

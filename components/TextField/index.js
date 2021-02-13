@@ -14,6 +14,7 @@ const Wrapper = styled.div`
 const IconWrapper = styled.div`
   position: absolute;
   top: 0.875rem;
+  left: .5rem;
 `;
 
 const TextField = forwardRef(({ id, label, icon, onFocus, onBlur, ...others }, ref) => {
