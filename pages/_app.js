@@ -6,6 +6,7 @@ import { translationMessages } from '@/config/i18n';
 
 import LanguageProvider from '@/providers/LanguageProvider';
 import ModalProvider from '@/providers/ModalProvider';
+import ToastProvider from '@/providers/ToastProvider';
 
 import { globalStyles } from '@/styles/globals';
 
@@ -22,6 +23,7 @@ const UDigital = ({ Component, pageProps, router }) => {
             {globalStyles}
             <Component {...pageProps} />
             <ModalProvider />
+            <ToastProvider />
           </Hydrate>
         </LanguageProvider>
       </QueryClientProvider>
