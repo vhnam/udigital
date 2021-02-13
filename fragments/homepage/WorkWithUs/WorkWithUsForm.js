@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import styled from '@emotion/styled';
 import { useForm } from 'react-hook-form';
 import { FormattedMessage } from 'react-intl';
@@ -7,7 +8,6 @@ import { useCreateFeedback } from '@/queries/hooks/feedbacks';
 import Button from '@/components/Button';
 import { Account, Email, Phone } from '@/components/Icons';
 import TextField from '@/components/TextField';
-import { useMemo } from 'react';
 
 const Form = styled.form`
   margin: 0 auto;
@@ -20,9 +20,9 @@ const BtnSubmit = styled(Button)`
 `;
 
 const WorkWithUsForm = () => {
-  const { register, handleSubmit, formState } = useForm({ mode: 'onChange' });
+  const { register, handleSubmit, formState, reset } = useForm({ mode: 'onChange' });
 
-  const { mutate: createFeedback } = useCreateFeedback();
+  const createFeedback = useCreateFeedback();
 
   const { isDirty, isValid, isSubmitting } = formState;
 
@@ -35,6 +35,8 @@ const WorkWithUsForm = () => {
       Name: values.name,
       Email: values.email,
       Phone: values.phone,
+    }).then(() => {
+      reset();
     });
   };
 
