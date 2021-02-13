@@ -19,6 +19,10 @@ const apis = {
     url: '/works',
     method: 'GET',
   },
+  getReviews: {
+    url: '/reviews',
+    method: 'GET',
+  },
 };
 
 const config = {

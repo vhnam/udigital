@@ -5,6 +5,7 @@ import { fetchClients } from '@/hooks/useClients';
 import { fetchServices } from '@/hooks/useServices';
 import { fetchAbout } from '@/hooks/useAbout';
 import { fetchWorks } from '@/hooks/useWorks';
+import { fetchReviews } from '@/hooks/useReviews';
 
 import Footer from '@/components/Footer';
 import Nav from '@/components/Nav';
@@ -43,6 +44,7 @@ export const getStaticProps = async () => {
   await queryClient.prefetchQuery(['services'], fetchServices);
   await queryClient.prefetchQuery(['about'], fetchAbout);
   await queryClient.prefetchQuery(['works'], fetchWorks);
+  await queryClient.prefetchQuery(['views'], fetchReviews);
 
   return {
     props: {

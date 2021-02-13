@@ -32,7 +32,7 @@ const Clients = () => {
     <Wrapper>
       <List>
         {data.map((item) => (
-          <Item key={item.id} brand={item.name} img={fetchImage(item.Logo[0].url)} />
+          <Item key={item.id} brand={item.Name} img={fetchImage(item.Logo[0].url)} />
         ))}
       </List>
     </Wrapper>

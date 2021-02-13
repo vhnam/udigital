@@ -86,7 +86,7 @@ const Slider = ({ content, render }) => {
       <Flex>
         {content.map((item, index) => (
           <Bullet
-            key={item.name}
+            key={item.id}
             onClick={() => {
               setPage([index, 0]);
               setActiveBullet(index);

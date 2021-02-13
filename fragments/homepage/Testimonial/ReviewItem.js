@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import { fetchImage } from '@/helpers/requests';
+
 import { H6 } from '@/components/Typography';
 
 import Avatar from '@/fragments/homepage/Testimonial/Avatar';
@@ -56,10 +58,10 @@ const Review = styled.p`
 
 const ReviewItem = ({ item }) => (
   <Wrapper>
-    <Avatar src={item.avatar} alt={item.name} />
-    <Name>{item.name}</Name>
-    <Title>{item.title}</Title>
-    <Review>{item.review}</Review>
+    <Avatar src={fetchImage(item.Avatar.url)} alt={item.Author.author_en} />
+    <Name>{item.Author.author_en}</Name>
+    <Title>{item.Title.title_en}</Title>
+    <Review>{item.Description.description_en}</Review>
   </Wrapper>
 );
 
