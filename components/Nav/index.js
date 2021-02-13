@@ -57,13 +57,10 @@ const Nav = () => {
   const handleScroll = useCallback(() => {
     const navBarHeight = containerElement.current.clientHeight;
     const scrollY = window.scrollY;
+    const percent = scrollY / navBarHeight;
 
-    if (scrollY <= navBarHeight) {
-      const percent = scrollY / navBarHeight;
-
-      containerElement.current.style.backgroundColor = 0.2 < percent ? '#fff' : 'transparent';
-      containerElement.current.style.boxShadow = 0 === percent ? 'none' : '0px 1px 4px rgb(0 0 0 / 10%)';
-    }
+    containerElement.current.style.backgroundColor = 0.2 < percent ? '#fff' : 'transparent';
+    containerElement.current.style.boxShadow = 0 === percent ? 'none' : '0px 1px 4px rgb(0 0 0 / 10%)';
   }, []);
 
   useEffect(() => {
