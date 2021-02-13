@@ -2,6 +2,8 @@ import styled from '@emotion/styled';
 
 import { useAbout } from '@/queries/hooks/about';
 
+import Loading from '@/components/Loading';
+
 import Content from '@/fragments/homepage/AboutUs/Content';
 import Image from '@/fragments/homepage/AboutUs/Image';
 
@@ -28,12 +30,15 @@ const Wrapper = styled.div`
 `;
 
 const AboutUs = () => {
-  const { data } = useAbout();
+  const { data, isLoading, isFetching, isFetched, isSuccess } = useAbout();
 
   return (
     <Container id="about">
       <Wrapper>
-        <Content content={data.biography_en} />
+        <Content>
+          {(isLoading || isFetching || !isSuccess) && <Loading />}
+          {isFetched && isSuccess && data.biography_en}
+        </Content>
         <Image />
       </Wrapper>
     </Container>

@@ -16,6 +16,7 @@ import { H2 } from '@/components/Typography';
 import Item from '@/fragments/homepage/OurWork/Item';
 import List from '@/fragments/homepage/OurWork/List';
 import ProjectModal from '@/fragments/homepage/OurWork/ProjectModal';
+import Loading from '@/components/Loading';
 
 const Wrapper = styled.div`
   padding: 1rem;
@@ -54,7 +55,7 @@ const ButtonWrapper = styled.div`
 `;
 
 const OurWork = () => {
-  const { data } = useWorks();
+  const { data, isLoading, isFetching, isFetched, isSuccess } = useWorks();
 
   const [, showModal] = useAtom(showModalAtom);
 
@@ -79,17 +80,20 @@ const OurWork = () => {
         <Description>
           <FormattedMessage id="OurWork.Description" />
         </Description>
-        <List>
-          {data.map((item) => (
-            <Item
-              key={item.id}
-              id={item.id}
-              category={item.Category.category_en}
-              project={item.Project.project_en}
-              image={fetchImage(item.Image.url)}
-            />
-          ))}
-        </List>
+        {(isLoading || isFetching || !isSuccess) && <Loading />}
+        {isFetched && isSuccess && (
+          <List>
+            {data.map((item) => (
+              <Item
+                key={item.id}
+                id={item.id}
+                category={item.Category.category_en}
+                project={item.Project.project_en}
+                image={fetchImage(item.Image.url)}
+              />
+            ))}
+          </List>
+        )}
         <ButtonWrapper>
           <Button>
             <FormattedMessage id="OurWork.SeeMoreWork" />

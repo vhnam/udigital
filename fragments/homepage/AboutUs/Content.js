@@ -21,14 +21,12 @@ const Description = styled.p`
   white-space: pre-line;
 `;
 
-const Content = () => (
+const Content = ({ children }) => (
   <Wrapper>
     <Heading>
       <FormattedMessage id="AboutUs.Heading" />
     </Heading>
-    <Description>
-      <FormattedMessage id="AboutUs.Description" />
-    </Description>
+    <Description>{children}</Description>
   </Wrapper>
 );
 

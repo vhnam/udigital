@@ -6,6 +6,7 @@ import { useServices } from '@/queries/hooks/services';
 
 import { H2 } from '@/components/Typography';
 import { Branding, CreativeDesign, DigitalMarketing, MediaBuying, Target, WebApp } from '@/components/Icons';
+import Loading from '@/components/Loading';
 
 import List from '@/fragments/homepage/Services/List';
 import Item from '@/fragments/homepage/Services/Item';
@@ -74,19 +75,20 @@ const services = [
 ];
 
 const Services = () => {
-  const { data } = useServices();
+  const { data, isLoading, isFetching, isFetched, isSuccess } = useServices();
 
-  const formattedData = useMemo(
-    () =>
-      data.reduce(
+  const formattedData = useMemo(() => {
+    if (isFetched && isSuccess) {
+      return data.reduce(
         (obj, item) => ({
           ...obj,
           [item.key]: item,
         }),
         {}
-      ),
-    [data]
-  );
+      );
+    }
+    return [];
+  }, [data]);
 
   return (
     <Wrapper id="services">
@@ -96,18 +98,20 @@ const Services = () => {
       <Description>
         <FormattedMessage id="Services.Description" />
       </Description>
-
-      <List>
-        {services.map((item) => (
-          <Item
-            key={item.key}
-            heading={formattedData[item.key].Heading.heading_en}
-            description={formattedData[item.key].Description.description_en}
-            color={item.color}
-            icon={item.icon}
-          />
-        ))}
-      </List>
+      {(isLoading || isFetching || !isSuccess) && <Loading />}
+      {isFetched && isSuccess && (
+        <List>
+          {services.map((item) => (
+            <Item
+              key={item.key}
+              heading={formattedData[item.key].Heading.heading_en}
+              description={formattedData[item.key].Description.description_en}
+              color={item.color}
+              icon={item.icon}
+            />
+          ))}
+        </List>
+      )}
     </Wrapper>
   );
 };

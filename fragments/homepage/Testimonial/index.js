@@ -17,14 +17,16 @@ const Wrapper = styled.div`
 `;
 
 const Testimonial = () => {
-  const { data, isFetching, isLoading } = useReviews();
+  const { data, isFetching, isLoading, isFetched, isSuccess } = useReviews();
 
   return (
     <Container>
       <Wrapper>
         <Illustrator />
-        {(isFetching || isLoading) && <Loading />}
-        {!isFetching && <Slider content={data} render={(item) => <ReviewItem key={item.id} item={item} />} />}
+        {(isFetching || isLoading || !isSuccess) && <Loading />}
+        {isFetched && isSuccess && (
+          <Slider content={data} render={(item) => <ReviewItem key={item.id} item={item} />} />
+        )}
       </Wrapper>
     </Container>
   );

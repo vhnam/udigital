@@ -4,6 +4,8 @@ import { fetchImage } from '@/helpers/requests';
 
 import { useClients } from '@/queries/hooks/clients';
 
+import Loading from '@/components/Loading';
+
 import Item from '@/fragments/homepage/Clients/Item';
 import List from '@/fragments/homepage/Clients/List';
 
@@ -26,14 +28,15 @@ const Wrapper = styled.div`
 `;
 
 const Clients = () => {
-  const { data } = useClients();
+  const { data, isLoading, isFetching, isFetched, isSuccess } = useClients();
 
   return (
     <Wrapper>
+      {(isLoading || isFetching || !isSuccess) && <Loading />}
       <List>
-        {data.map((item) => (
-          <Item key={item.id} brand={item.Name} img={fetchImage(item.Logo[0].url)} />
-        ))}
+        {isFetched &&
+          isSuccess &&
+          data.map((item) => <Item key={item.id} brand={item.Name} img={fetchImage(item.Logo[0].url)} />)}
       </List>
     </Wrapper>
   );

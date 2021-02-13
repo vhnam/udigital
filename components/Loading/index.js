@@ -1,5 +1,12 @@
 import styled from '@emotion/styled';
 
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  width: 100%;
+`;
+
 const Wrapper = styled.div`
   display: inline-block;
   position: relative;
@@ -8,7 +15,7 @@ const Wrapper = styled.div`
 
   > div {
     position: absolute;
-    background: #fff;
+    background: #32b260;
     opacity: 1;
     border-radius: 50%;
     animation: loading 1.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
@@ -39,10 +46,12 @@ const Outter = styled.div`
 `;
 
 const Loading = () => (
-  <Wrapper>
-    <Inner />
-    <Outter />
-  </Wrapper>
+  <Container>
+    <Wrapper>
+      <Inner />
+      <Outter />
+    </Wrapper>
+  </Container>
 );
 
 export default Loading;
