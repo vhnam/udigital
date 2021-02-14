@@ -35,10 +35,8 @@ const AboutUs = () => {
   return (
     <Container id="about">
       <Wrapper>
-        <Content>
-          {(isLoading || isFetching || !isSuccess) && <Loading />}
-          {isFetched && isSuccess && data.biography_en}
-        </Content>
+        {(isLoading || isFetching || !isSuccess) && <Loading />}
+        {isFetched && isSuccess && <Content>{data.biography_en}</Content>}
         <Image />
       </Wrapper>
     </Container>

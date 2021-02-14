@@ -1,22 +1,22 @@
 import styled from '@emotion/styled';
+import { rgba } from 'emotion-rgba';
 
 const Button = styled.button`
   display: inline-block;
   width: 100%;
   padding: 1rem;
-  background-color: #32b260;
-  font-family: 'Montserrat', sans-serif;
+  background-color: #30824e;
   color: #fff;
   font-weight: 500;
   box-shadow: 0 10px 22px rgb(172 246 199 / 90%);
   border: none;
 
   &:hover {
-    background-color: #46b96f;
+    background-color: ${rgba('#30824E', 0.6)};
   }
 
   &:active {
-    background-color: #2da056;
+    background-color: ${rgba('#30824E', 0.8)};
   }
 
   &:disabled {

@@ -25,7 +25,9 @@ const Wrapper = styled.div`
   }
 `;
 
-const Name = styled(H6)`
+const ExtendH3 = H6.withComponent('h3');
+
+const Name = styled(ExtendH3)`
   margin-top: 3rem;
   margin-bottom: 0;
   font-size: 1.25rem;

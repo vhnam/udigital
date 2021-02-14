@@ -19,23 +19,21 @@ import Services from '@/fragments/homepage/Services';
 import Testimonial from '@/fragments/homepage/Testimonial';
 import WorkWithUs from '@/fragments/homepage/WorkWithUs';
 
-const Home = () => {
-  return (
-    <>
-      <Nav />
-      <Hero>
-        <Banner />
-        <Clients />
-      </Hero>
-      <Services />
-      <AboutUs />
-      <OurWork />
-      <Testimonial />
-      <WorkWithUs />
-      <Footer />
-    </>
-  );
-};
+const Home = () => (
+  <>
+    <Nav />
+    <Hero>
+      <Banner />
+      <Clients />
+    </Hero>
+    <Services />
+    <AboutUs />
+    <OurWork />
+    <Testimonial />
+    <WorkWithUs />
+    <Footer />
+  </>
+);
 
 export const getStaticProps = async () => {
   const queryClient = new QueryClient();

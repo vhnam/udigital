@@ -17,7 +17,9 @@ const Wrapper = styled.div`
   }
 `;
 
-const Info = styled(H5)`
+const ExtendH5 = H5.withComponent('div');
+
+const Info = styled(ExtendH5)`
   margin: 0.5rem 0;
   font-weight: 300;
   color: #545454;
@@ -93,7 +95,7 @@ const Branding = () => (
     <List>
       {links.map((link) => (
         <Item key={link.name}>
-          <A href={link.link} target="_blank" rel="noopener noreferrer">
+          <A href={link.link} title={link.name} target="_blank" rel="noopener noreferrer">
             {link.icon}
           </A>
         </Item>

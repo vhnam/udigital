@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "ANALYZE_BUNDLE=true next build",
+    "start": "next start",
+    "find:unused": "next-unused"
   },
   "dependencies": {
     "@emotion/react": "^11.1.5",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@emotion/babel-plugin": "^11.1.2",
     "husky": "^5.0.9",
+    "next-unused": "0.0.3",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0"
   },

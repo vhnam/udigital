@@ -40,7 +40,9 @@ const Category = styled.div`
   font-weight: 300;
 `;
 
-const Project = styled(H5)`
+const ExtendedH3 = H5.withComponent('h3');
+
+const Project = styled(ExtendedH3)`
   margin: 0;
 `;
 
