@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Image from 'next/image';
 
 const Wrapper = styled.div`
 text-align: center;
@@ -21,10 +22,10 @@ const Img = styled.img`
   }
 `;
 
-const Image = () => (
+const Thumbnail = () => (
   <Wrapper>
-    <Img src="/img/about-us.png" alt="About Us" />
+    <Image src="/img/about-us.png" alt="About Us" width="534" height="615" />
   </Wrapper>
 );
 
-export default Image;
+export default Thumbnail;

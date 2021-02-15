@@ -10,4 +10,7 @@ module.exports = {
     locales: ['en', 'vi', 'zh-tw'],
     defaultLocale: 'en',
   },
+  images: {
+    domains: ['localhost:1337'],
+  },
 };

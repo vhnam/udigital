@@ -5,7 +5,7 @@ import { useAbout } from '@/queries/hooks/about';
 import Loading from '@/components/Loading';
 
 import Content from '@/fragments/homepage/AboutUs/Content';
-import Image from '@/fragments/homepage/AboutUs/Image';
+import Thumbnail from '@/fragments/homepage/AboutUs/Thumbnail';
 
 const Container = styled.div`
   background-color: #f8fbff;
@@ -37,7 +37,7 @@ const AboutUs = () => {
       <Wrapper>
         {(isLoading || isFetching || !isSuccess) && <Loading />}
         {isFetched && isSuccess && <Content>{data.biography_en}</Content>}
-        <Image />
+        <Thumbnail />
       </Wrapper>
     </Container>
   );
