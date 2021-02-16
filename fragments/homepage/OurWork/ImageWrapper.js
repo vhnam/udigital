@@ -11,6 +11,7 @@ import { View } from '@/components/Icons';
 
 const Wrapper = styled.div`
   position: relative;
+  height: 20rem;
 `;
 
 const BlurContainer = styled.div`

@@ -51,7 +51,7 @@ const Item = ({ category, project, id, image }) => (
   <Li>
     <Card>
       <ImageWrapper id={id}>
-        <Img src={image} alt={project} />
+        <Img src={image} alt={project} layout="fill" />
       </ImageWrapper>
       <Content>
         <Category>{category}</Category>
