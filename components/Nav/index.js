@@ -2,15 +2,15 @@ import { useCallback, useEffect, useRef } from 'react';
 import styled from '@emotion/styled';
 import { FormattedMessage } from 'react-intl';
 
-import useToggle from '../../hooks/useToggle';
+import useToggle from '@/hooks/useToggle';
 
-import Logo from '../Logo';
+import Logo from '@/components/Logo';
 
-import Navbar from './Navbar';
-import NavbarNav from './NavbarNav';
-import NavGetStarted from './NavGetStarted';
-import NavItem from './NavItem';
-import NavToggle from './NavToggle';
+import Navbar from '@/components/Nav/Navbar';
+import NavbarNav from '@/components/Nav/NavbarNav';
+import NavGetStarted from '@/components/Nav/NavGetStarted';
+import NavItem from '@/components/Nav/NavItem';
+import NavToggle from '@/components/Nav/NavToggle';
 
 const Container = styled.div`
   display: flex;
@@ -57,13 +57,10 @@ const Nav = () => {
   const handleScroll = useCallback(() => {
     const navBarHeight = containerElement.current.clientHeight;
     const scrollY = window.scrollY;
+    const percent = scrollY / navBarHeight;
 
-    if (scrollY <= navBarHeight) {
-      const percent = scrollY / navBarHeight;
-
-      containerElement.current.style.backgroundColor = 0.2 < percent ? '#fff' : 'transparent';
-      containerElement.current.style.boxShadow = 0 === percent ? 'none' : '0px 1px 4px rgb(0 0 0 / 10%)';
-    }
+    containerElement.current.style.backgroundColor = 0.2 < percent ? '#fff' : 'transparent';
+    containerElement.current.style.boxShadow = 0 === percent ? 'none' : '0px 1px 4px rgb(0 0 0 / 10%)';
   }, []);
 
   useEffect(() => {

@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "ANALYZE_BUNDLE=true next build",
+    "start": "next start",
+    "find:unused": "next-unused"
   },
   "dependencies": {
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
+    "axios": "^0.21.1",
     "emotion-rgba": "0.0.8",
     "framer-motion": "^3.3.0",
     "jotai": "^0.14.0",
@@ -18,11 +20,13 @@
     "react": "^17.0.1",
     "react-dom": "17.0.1",
     "react-hook-form": "^6.15.1",
-    "react-intl": "^5.12.1"
+    "react-intl": "^5.12.1",
+    "react-query": "^3.8.3"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.1.2",
     "husky": "^5.0.9",
+    "next-unused": "0.0.3",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0"
   },

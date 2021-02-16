@@ -1,7 +1,11 @@
 import styled from '@emotion/styled';
 
-import Content from './Content';
-import Image from './Image';
+import { useAbout } from '@/queries/hooks/about';
+
+import Loading from '@/components/Loading';
+
+import Content from '@/fragments/homepage/AboutUs/Content';
+import Thumbnail from '@/fragments/homepage/AboutUs/Thumbnail';
 
 const Container = styled.div`
   background-color: #f8fbff;
@@ -25,13 +29,18 @@ const Wrapper = styled.div`
   }
 `;
 
-const AboutUs = () => (
-  <Container id="about">
-    <Wrapper>
-      <Content />
-      <Image />
-    </Wrapper>
-  </Container>
-);
+const AboutUs = () => {
+  const { data, isLoading, isFetching, isFetched, isSuccess } = useAbout();
+
+  return (
+    <Container id="about">
+      <Wrapper>
+        {(isLoading || isFetching || !isSuccess) && <Loading />}
+        {isFetched && isSuccess && <Content>{data.biography_en}</Content>}
+        <Thumbnail />
+      </Wrapper>
+    </Container>
+  );
+};
 
 export default AboutUs;

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { FormattedMessage } from 'react-intl';
 
-import Logo from '../Logo';
+import Logo from '@/components/Logo';
 
 const Wrapper = styled.div`
   text-align: center;

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { FormattedMessage } from 'react-intl';
 
-import { H2 } from '../../../components/Typography';
+import { H2 } from '@/components/Typography';
 
 const Wrapper = styled.div`
   @media (min-width: 992px) {
@@ -21,14 +21,12 @@ const Description = styled.p`
   white-space: pre-line;
 `;
 
-const Content = () => (
+const Content = ({ children }) => (
   <Wrapper>
     <Heading>
       <FormattedMessage id="AboutUs.Heading" />
     </Heading>
-    <Description>
-      <FormattedMessage id="AboutUs.Description" />
-    </Description>
+    <Description>{children}</Description>
   </Wrapper>
 );
 

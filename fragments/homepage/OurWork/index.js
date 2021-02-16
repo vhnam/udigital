@@ -2,16 +2,21 @@ import styled from '@emotion/styled';
 import { FormattedMessage } from 'react-intl';
 import { useAtom } from 'jotai';
 
-import OurWorkContext from '../../../contexts/OurWorkContext';
+import OurWorkContext from '@/contexts/OurWorkContext';
 
-import { showModalAtom } from '../../../store/modal';
+import { fetchImage } from '@/helpers/requests';
 
-import Button from '../../../components/Button';
-import { H2 } from '../../../components/Typography';
+import { useWorks } from '@/queries/hooks/works';
 
-import Item from './Item';
-import List from './List';
-import ProjectModal from './ProjectModal';
+import { showModalAtom } from '@/store/modal';
+
+import Button from '@/components/Button';
+import { H2 } from '@/components/Typography';
+
+import Item from '@/fragments/homepage/OurWork/Item';
+import List from '@/fragments/homepage/OurWork/List';
+import ProjectModal from '@/fragments/homepage/OurWork/ProjectModal';
+import Loading from '@/components/Loading';
 
 const Wrapper = styled.div`
   padding: 1rem;
@@ -47,48 +52,11 @@ const Description = styled.p`
 const ButtonWrapper = styled.div`
   margin: 0 auto 5rem auto;
   max-width: 20rem;
-`
-
-const data = [
-  {
-    id: 1,
-    category: 'Dinosaur',
-    project: 'Telmatosaurus',
-    image: '/img/project-01.jpg',
-  },
-  {
-    id: 2,
-    category: 'Metal',
-    project: 'Platinum',
-    image: '/img/project-02.jpg',
-  },
-  {
-    id: 3,
-    category: 'Dogs',
-    project: 'Boxer',
-    image: '/img/project-03.jpg',
-  },
-  {
-    id: 4,
-    category: 'Snakes',
-    project: 'Brown Snake',
-    image: '/img/project-04.jpg',
-  },
-  {
-    id: 5,
-    category: 'Flowers Actors',
-    project: 'Geranium',
-    image: '/img/project-05.jpg',
-  },
-  {
-    id: 6,
-    category: 'Actors',
-    project: 'Ben Kingsley',
-    image: '/img/project-06.jpg',
-  },
-];
+`;
 
 const OurWork = () => {
+  const { data, isLoading, isFetching, isFetched, isSuccess } = useWorks();
+
   const [, showModal] = useAtom(showModalAtom);
 
   const handleSelectedProject = (projectID) => {
@@ -112,15 +80,24 @@ const OurWork = () => {
         <Description>
           <FormattedMessage id="OurWork.Description" />
         </Description>
-        <List>
-          {data.map((item) => (
-            <Item key={item.id} id={item.id} category={item.category} project={item.project} image={item.image} />
-          ))}
-        </List>
+        {(isLoading || isFetching || !isSuccess) && <Loading />}
+        {isFetched && isSuccess && (
+          <List>
+            {data.map((item) => (
+              <Item
+                key={item.id}
+                id={item.id}
+                category={item.Category.category_en}
+                project={item.Project.project_en}
+                image={fetchImage(item.Image.url)}
+              />
+            ))}
+          </List>
+        )}
         <ButtonWrapper>
-        <Button>
-          <FormattedMessage id="OurWork.SeeMoreWork" />
-        </Button>
+          <Button>
+            <FormattedMessage id="OurWork.SeeMoreWork" />
+          </Button>
         </ButtonWrapper>
       </Wrapper>
     </OurWorkContext.Provider>

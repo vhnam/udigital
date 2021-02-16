@@ -1,4 +1,4 @@
-import translationMessages, { languageNativeNames } from './locales';
+import translationMessages, { languageNativeNames } from '@/locales/index';
 
 const languages = Object.keys(translationMessages);
 

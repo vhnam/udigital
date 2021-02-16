@@ -1,15 +1,16 @@
 import styled from '@emotion/styled';
+import Image from 'next/image';
 
-const Logo = styled.div`
+const Wrapper = styled.div`
   display: inline-block;
   vertical-align: middle;
-  width: 8.25rem;
-  height: 2.75rem;
-  background-image: url('/img/logo.png');
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
   box-sizing: border-box;
 `;
+
+const Logo = () => (
+  <Wrapper>
+    <Image src="/img/logo.png" alt="UDigital" width="132" height="44" />
+  </Wrapper>
+);
 
 export default Logo;

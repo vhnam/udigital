@@ -1,10 +1,13 @@
+import { useMemo } from 'react';
 import styled from '@emotion/styled';
 import { useForm } from 'react-hook-form';
 import { FormattedMessage } from 'react-intl';
 
-import Button from '../../../components/Button';
-import { Account, Email, Phone } from '../../../components/Icons';
-import TextField from '../../../components/TextField';
+import { useCreateFeedback } from '@/queries/hooks/feedbacks';
+
+import Button from '@/components/Button';
+import { Account, Email, Phone } from '@/components/Icons';
+import TextField from '@/components/TextField';
 
 const Form = styled.form`
   margin: 0 auto;
@@ -17,9 +20,25 @@ const BtnSubmit = styled(Button)`
 `;
 
 const WorkWithUsForm = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, formState, reset } = useForm({ mode: 'onChange' });
 
-  const onSubmit = () => {};
+  const createFeedback = useCreateFeedback();
+
+  const { isDirty, isValid, isSubmitting } = formState;
+
+  const isDisabledForm = useMemo(() => {
+    return process.browser ? !isDirty || !isValid || isSubmitting : true;
+  }, [isDirty, isValid, isSubmitting]);
+
+  const onSubmit = (values) => {
+    createFeedback({
+      Name: values.name,
+      Email: values.email,
+      Phone: values.phone,
+    }).then(() => {
+      reset();
+    });
+  };
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
@@ -29,6 +48,7 @@ const WorkWithUsForm = () => {
         label={<FormattedMessage id="WorkWithUs.Name" />}
         icon={<Account width={18} height={18} />}
         ref={register({ required: true })}
+        disabled={isSubmitting}
       />
       <TextField
         name="email"
@@ -36,15 +56,18 @@ const WorkWithUsForm = () => {
         label={<FormattedMessage id="WorkWithUs.Email" />}
         icon={<Email width={18} height={18} />}
         ref={register({ required: true })}
+        disabled={isSubmitting}
       />
       <TextField
         name="phone"
         id="phone"
+        type="tel"
         label={<FormattedMessage id="WorkWithUs.Phone" />}
         icon={<Phone width={18} height={18} />}
         ref={register({ required: true })}
+        disabled={isSubmitting}
       />
-      <BtnSubmit>
+      <BtnSubmit disabled={isDisabledForm}>
         <FormattedMessage id="WorkWithUs.Submit" />
       </BtnSubmit>
     </Form>

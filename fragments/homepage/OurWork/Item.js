@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
+import Image from 'next/image';
 
-import { H5 } from '../../../components/Typography';
+import { H5 } from '@/components/Typography';
 
-import ImageWrapper from './ImageWrapper';
+import ImageWrapper from '@/fragments/homepage/OurWork/ImageWrapper';
 
 const Li = styled.li`
   margin-bottom: 1.5rem;
@@ -29,7 +30,7 @@ const Content = styled.div`
   padding: 1rem;
 `;
 
-const Img = styled.img`
+const Img = styled(Image)`
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -40,7 +41,9 @@ const Category = styled.div`
   font-weight: 300;
 `;
 
-const Project = styled(H5)`
+const ExtendedH3 = H5.withComponent('h3');
+
+const Project = styled(ExtendedH3)`
   margin: 0;
 `;
 

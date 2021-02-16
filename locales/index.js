@@ -1,6 +1,6 @@
-import en from './en.json';
-import vi from './vi.json';
-import zhTW from './zh-tw.json';
+import en from '@/locales/en.json';
+import vi from '@/locales/vi.json';
+import zhTW from '@/locales/zh-tw.json';
 
 const trads = {
   en,

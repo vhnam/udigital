@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
-import Modal from '../../../components/Modal';
-import { H5 } from '../../../components/Typography';
+import Modal from '@/components/Modal';
+import { H5 } from '@/components/Typography';
 
 const Wrapper = styled.div`
   text-align: center;

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { rgba } from 'emotion-rgba';
 
 const NavGetStarted = styled.button`
   width: 8.75rem;
@@ -6,7 +7,7 @@ const NavGetStarted = styled.button`
   font-size: 1rem;
   color: #fff;
   line-height: 1.5rem;
-  background-color: #32b260;
+  background-color: #30824E;
   border-top-left-radius: 1.5rem;
   border-bottom-left-radius: 1.5rem;
   border-bottom-right-radius: 1.5rem;
@@ -14,11 +15,11 @@ const NavGetStarted = styled.button`
   outline: none;
 
   &:hover {
-    background-color: #46b96f;
+    background-color: ${rgba('#30824E', 0.6)};
   }
 
   &:active {
-    background-color: #2da056;
+    background-color: ${rgba('#30824E', 0.8)};
   }
 `;
 

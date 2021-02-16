@@ -1,8 +1,8 @@
 import { useAtom } from 'jotai';
 
-import { closeModalAtom, derivedModalAtom } from '../../store/modal';
+import { closeModalAtom, derivedModalAtom } from '@/store/modal';
 
-import Portal from '../../components/Portal';
+import Portal from '@/components/Portal';
 
 const ModalProvider = () => {
   const [stack] = useAtom(derivedModalAtom);

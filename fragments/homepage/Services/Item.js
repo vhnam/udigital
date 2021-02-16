@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 import { rgba } from 'emotion-rgba';
 
-import { H5 } from '../../../components/Typography';
-import Icon from './Icon';
+import { H5 } from '@/components/Typography';
+
+import Icon from '@/fragments/homepage/Services/Icon';
 
 const Li = styled.li`
   margin-bottom: 1.5rem;
@@ -37,8 +38,10 @@ const Container = styled.div`
   }
 `;
 
-const Heading = styled(H5)`
-  margin: 0;
+const ExtendedH3 = H5.withComponent('h3');
+
+const Heading = styled(ExtendedH3)`
+  margin-bottom: 0;
 `;
 
 const Description = styled.p`

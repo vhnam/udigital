@@ -8,7 +8,7 @@ class RootDocument extends Document {
         <body>
           <Main />
 
-          <div id="portal-gate"></div>
+          <div id="portal-gate" />
 
           <NextScript />
         </body>

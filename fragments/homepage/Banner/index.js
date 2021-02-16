@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
-import Content from './Content';
-import Image from './Image';
+import Content from '@/fragments/homepage/Banner/Content';
+import Thumbnail from '@/fragments/homepage/Banner/Thumbnail';
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 const Banner = () => (
   <Wrapper>
     <Content />
-    <Image />
+    <Thumbnail />
   </Wrapper>
 );
 

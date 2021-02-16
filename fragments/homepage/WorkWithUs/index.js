@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import { FormattedMessage } from 'react-intl';
 
-import { H2 } from '../../../components/Typography';
+import { H2 } from '@/components/Typography';
 
-import WorkWithUsForm from './WorkWithUsForm';
+import WorkWithUsForm from '@/fragments/homepage/WorkWithUs/WorkWithUsForm';
 
 const Wrapper = styled.div`
   padding: 3rem 1rem;

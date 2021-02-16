@@ -1,8 +1,10 @@
 import styled from '@emotion/styled';
 
-import { H6 } from '../../../components/Typography';
+import { fetchImage } from '@/helpers/requests';
 
-import Avatar from './Avatar';
+import { H6 } from '@/components/Typography';
+
+import Avatar from '@/fragments/homepage/Testimonial/Avatar';
 
 const Wrapper = styled.div`
   position: relative;
@@ -23,7 +25,9 @@ const Wrapper = styled.div`
   }
 `;
 
-const Name = styled(H6)`
+const ExtendH3 = H6.withComponent('h3');
+
+const Name = styled(ExtendH3)`
   margin-top: 3rem;
   margin-bottom: 0;
   font-size: 1.25rem;
@@ -56,10 +60,10 @@ const Review = styled.p`
 
 const ReviewItem = ({ item }) => (
   <Wrapper>
-    <Avatar src={item.avatar} alt={item.name} />
-    <Name>{item.name}</Name>
-    <Title>{item.title}</Title>
-    <Review>{item.review}</Review>
+    <Avatar src={fetchImage(item.Avatar.url)} alt={item.Author.author_en} />
+    <Name>{item.Author.author_en}</Name>
+    <Title>{item.Title.title_en}</Title>
+    <Review>{item.Description.description_en}</Review>
   </Wrapper>
 );
 

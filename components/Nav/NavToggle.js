@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import {Menu} from '../Icons';
+import { Menu } from '@/components/Icons';
 
 const Wrapper = styled.button`
   color: #000;
@@ -10,7 +10,7 @@ const Wrapper = styled.button`
 `;
 
 const NavToggle = (props) => (
-  <Wrapper {...props}>
+  <Wrapper aria-label="toggle-button" {...props}>
     <Menu />
   </Wrapper>
 );

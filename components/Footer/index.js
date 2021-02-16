@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
-import Branding from './Branding';
-import Contact from './Contact';
-import Nav from './Nav';
+import Branding from '@/components/Footer/Branding';
+import Contact from '@/components/Footer/Contact';
+import Nav from '@/components/Footer/Nav';
 
 const Container = styled.footer`
   padding: 2.25rem 1rem 5rem 1rem;

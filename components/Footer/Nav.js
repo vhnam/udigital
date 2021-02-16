@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { FormattedMessage } from 'react-intl';
 import Link from 'next/link';
 
-import { H6 } from '../Typography';
+import { H6 } from '@/components/Typography';
 
 const Wrapper = styled.div`
   text-align: center;
@@ -16,7 +16,9 @@ const Wrapper = styled.div`
   }
 `;
 
-const Heading = styled(H6)`
+const ExtendedH3 = H6.withComponent('h3');
+
+const Heading = styled(ExtendedH3)`
   margin-top: 3rem;
   margin-bottom: 1rem;
 
@@ -72,7 +74,7 @@ const Branding = () => (
       {links.map((link, index) => (
         <Item key={index}>
           <Link href={link.link}>
-            <A>{link.text}</A>
+            <A title={link.text}>{link.text}</A>
           </Link>
         </Item>
       ))}
