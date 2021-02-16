@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "ANALYZE_BUNDLE=true next build",
-    "start": "next start",
+    "start": "next start -p 13000",
     "find:unused": "next-unused"
   },
   "dependencies": {
