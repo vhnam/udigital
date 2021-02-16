@@ -11,6 +11,6 @@ module.exports = {
     defaultLocale: 'en',
   },
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'fake-udigital-cms.sestud.io'],
   },
 };
