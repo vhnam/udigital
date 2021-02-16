@@ -15,7 +15,12 @@ const Wrapper = styled.div`
 
 const Thumbnail = () => (
   <Wrapper>
-    <Image src="/img/Banner.png" alt="Banner" width="640" height="480" />
+    <Image
+      src="/img/Banner.png"
+      alt="Banner"
+      width="555"
+      height="394"
+    />
   </Wrapper>
 );
 

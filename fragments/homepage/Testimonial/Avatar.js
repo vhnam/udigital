@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Image from 'next/image';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -15,13 +16,13 @@ const Wrapper = styled.div`
   overflow: hidden;
 `;
 
-const Image = styled.img`
+const Img = styled(Image)`
   width: 100%;
 `;
 
 const Avatar = ({ src, alt }) => (
   <Wrapper>
-    <Image src={src} alt={alt} />
+    <Img src={src} alt={alt} width="90" height="90" />
   </Wrapper>
 );
 

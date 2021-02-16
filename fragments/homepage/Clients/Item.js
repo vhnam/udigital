@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Image from 'next/image';
 
 const Li = styled.li`
   flex: 0 0 auto;
@@ -27,14 +28,14 @@ const Container = styled.div`
   box-shadow: 3px 20px 43px rgb(0 0 0 / 20%);
 `;
 
-const Image = styled.img`
-  width: 100%;
-`;
+const Img = styled(Image)`
+  object-fit: contain;
+`
 
 const Item = ({ brand, img }) => (
   <Li>
     <Container>
-      <Image src={img} alt={brand} />
+      <Img src={img} alt={brand} width="128" height="128" />
     </Container>
   </Li>
 );
